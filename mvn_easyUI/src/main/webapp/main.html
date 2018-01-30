@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//当页面加载完毕，通过url从服务器获取生成这棵树的json数据
+	$("#myTree").tree({
+		//url:"/tree/data",
+		url:"/tree.json",
+		onClick:function(node){
+			//alert("hello");
+			//alert(node.text);
+			var isLeaf = $(this).tree('isLeaf',node.target);
+			//alert(isLeaf?'叶子节点':'父节点');
+			if(!isLeaf){
+				$(this).tree('toggle',node.target);
+			}else{
+				var flag =  $("#myTabs").tabs('exists',node.text);
+				//alert(flag);
+				if(!flag){
+					$('#myTabs').tabs('add',{    
+					    title:node.text,    
+					    //content:'选项卡内容',
+					    href:node.attributes.href,
+					    
+					    closable:true,    
+					    tools:[{    
+					        iconCls:'icon-mini-refresh',    
+					        handler:function(){    
+					            alert('refresh');    
+					        }    
+					    },{    
+					        iconCls:'icon-mini-add',    
+					        handler:function(){    
+					            alert('add');    
+					        }    
+					    },{    
+					        iconCls:'icon-mini-edit',    
+					        handler:function(){    
+					            alert('编辑');    
+					        }    
+					    }]    
+					}); 
+				}else{
+					$('#myTabs').tabs('select',node.text);
+				}
+				
+				
+			}
+		}
+	});
+	
+});
+</script>
+</head>
+<body class="easyui-layout">
+	<!-- title是面板标题， region表示区域的位置，split表示是否分隔栏可拖拉 -->
+	<div data-options="title:'北标题',region:'north',split:true" style="height:100px;">
+		欢迎使用尚学堂管理系统
+	</div>
+	<div data-options="title:'南标题',region:'south',split:true" style="height:100px;">南</div>
+	<div data-options="title:'西标题',region:'west',split:true" style="width:150px;">
+<!-- 		<ul class="easyui-tree" id="myTree"> -->
+<!-- 			<li> -->
+<!-- 				<span>部门管理</span> -->
+<!-- 				<ul> -->
+<!-- 					<li>浏览部门信息</li> -->
+<!-- 					<li>添加部门信息</li> -->
+<!-- 				</ul> -->
+<!-- 			</li> -->
+<!-- 			<li> -->
+<!-- 				员工管理 -->
+<!-- 			</li> -->
+<!-- 			<li> -->
+<!-- 				合同管理 -->
+<!-- 			</li> -->
+<!-- 			<li> -->
+<!-- 				客户管理 -->
+<!-- 			</li> -->
+<!-- 			<li> -->
+<!-- 				绩效管理 -->
+<!-- 			</li> -->
+<!-- 		</ul> -->
+		<ul id="myTree"></ul>
+		
+	</div>
+	<div data-options="title:'东标题',region:'east',split:true" style="width:100px">东</div>
+	<div data-options="title:'中标题',region:'center',split:true">
+		    <div id="myTabs" class="easyui-tabs" style="width:500px;height:250px;">   
+		    <div title="Tab1" style="padding:20px;display:none;">   
+		        tab1    
+		    </div>   
+		    <div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">   
+		        tab2    
+		    </div>   
+		    <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;display:none;">   
+		        tab3    
+		    </div>   
+			</div> 
+	</div>
+
+</body>
+</html>

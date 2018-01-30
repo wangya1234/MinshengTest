@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:07:51 +0800] "GET /main.html HTTP/1.1" 304 - http-bio-8081-exec-1 55
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:07:51 +0800] "POST /tree.json HTTP/1.1" 200 2712 http-bio-8081-exec-2 5
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:10:17 +0800] "GET /dept_query.html?_=1512288471144 HTTP/1.1" 200 2313 http-bio-8081-exec-4 8
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:10:34 +0800] "POST /dept/delete HTTP/1.1" 200 27 http-bio-8081-exec-6 22
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:13:05 +0800] "GET /main.html HTTP/1.1" 304 - http-bio-8081-exec-8 6
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:13:05 +0800] "POST /tree.json HTTP/1.1" 200 2712 http-bio-8081-exec-10 3
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:13:08 +0800] "GET /dept_query.html?_=1512288785192 HTTP/1.1" 200 2358 http-bio-8081-exec-2 7
+0:0:0:0:0:0:0:1 - - [03/Dec/2017:16:13:17 +0800] "POST /dept/delete HTTP/1.1" 200 27 http-bio-8081-exec-3 3

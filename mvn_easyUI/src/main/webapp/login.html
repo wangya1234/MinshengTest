@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登陆页面</title>
+<link href="easyui/themes/default/easyui.css" type="text/css" rel="stylesheet" />
+<link href="easyui/themes/icon.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	 $.extend($.fn.validatebox.defaults.rules, {    
+	    equals: {    
+	        validator: function(value,param){    
+	            return value == $(param[0]).val();    
+	        },    
+	        message: '确认密码和原密码不一致'   
+	    }    
+	});  
+});
+ function submitForm(){
+	$('#Loginform').form('submit',{    
+	    url:"system/login",    
+	    onSubmit: function(){    
+	       var isValid = $(this).form("validate"); 
+	       return isValid;
+	       return true;
+	    },    
+	    success:function(data){
+	    	$.messager.alert("登录信息",data,"info",function(){
+	    		alert("该跳转页面了")
+		    	window.location.href="/main.html";
+		        alert(data);    
+	    	});
+	    }    
+	});    
+	 	
+} 
+
+
+</script>
+</head>
+<body>
+<center style="padding-top: 100px">
+	<div id="p" class="easyui-panel" title="登陆框"     
+	        style="width:500px;height:400px;padding:10px;background:#fafafa;"   
+	       data-options="iconCls:'icon-save',closable:false,    
+	                collapsible:true,minimizable:true,maximizable:true">   
+		    <form id="Loginform" method="post">
+		        <table>
+		        	<tr>
+		        		<td >用户名:</td>
+		        		<td ><input  type="text" name="name" class="easyui-validatebox" data-options="required:true,validType:'length[6,12]',missingMessage:'请输入用户名'" />   </td>
+		        	</tr>
+		        	<tr>
+		        		<td>密码:</td>
+		        		<td><input id="pwd" name="pwd" type="password" class="easyui-validatebox" data-options="required:true" /><br/>   
+		        		</td>
+		        	</tr>
+		        	<tr>
+		        		<td>确认密码:</td>
+		        		<td><input id="rpwd" name="rpwd" type="password" class="easyui-validatebox" required="required" validType="equals['#pwd']" />   
+		        		</td>
+		        	</tr>
+		        </table>      
+			    <div>
+			        <a id="btnSubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok', onClick:submitForm">登陆</a> 
+			        <a id="btnReset" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">重置</a>  
+			    </div> 
+			</form>   
+	</div>
+</center> 
+
+</body>
+</html>

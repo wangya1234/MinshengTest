@@ -1,0 +1,73 @@
+员工信息
+<script type="text/javascript">
+$(function(){
+	$('#myDatagrid').datagrid({
+		queryParams: {
+			name: 'easyui',
+			subject: 'datagrid'
+		},
+		toolbar: [{
+			iconCls: 'icon-edit',//图标显示
+			text:'编辑',//工具栏名称以汉字显示
+			handler: function(){alert('编辑按钮')}
+		},'-',{
+			iconCls: 'icon-help',
+			text:'帮助',
+			handler: function(){alert('帮助按钮')}
+		},'-',{
+			iconCls: 'icon-no',
+			text:'删除',
+			handler: function(){
+				//1.获取要删除的内容(在删除时,获取的内容不能为空,要做一个验证)
+				var rows = $("#myDatagrid").datagrid('getSelections');
+				if(rows.length == 0){
+					$.messager.alert('警告','请选择要删除的数据','warning');
+				    return;
+				}
+				for (var  i=0;i<rows.length;i++){
+					alert(rows[i]+"\n"+JSON.stringify(rows[i]));
+				}
+				
+				
+				//2.向用户发出请求,(用户做出确认是否删除)
+				$.messager.confirm('确认对话框', '您确定删除吗？', function(r){
+						if (r){
+							//确定删除
+						    alert("是的");
+						}else{
+							//$.messager.alert("提示",'用户操作已经取消','info');
+							$.messager.show({
+								title:'提示',
+								msg:'用户操作已取消',
+								timeout:4000,
+								showType:'slide'
+							});
+						}
+					});
+					
+
+				//3.发送请求到服务器,删除数据(一条或者多条)
+				//4.刷新当前页面
+				
+				}
+		
+		}]
+	});
+});
+</script>
+<table id="myDatagrid"  class="easyui-datagrid" data-options="pagination:true,url:'/emp/query',method:'get',singleSelect:false">   
+    <thead>   
+        <tr>   
+            <th data-options="field:'productid'">产品编号</th>   
+            <th data-options="field:'productname'">产品名称</th>   
+        </tr>   
+    </thead>   
+    <!-- <tbody>   
+        <tr>   
+            <td>001</td><td>name1</td><td>2323</td>   
+        </tr>   
+        <tr>   
+            <td>002</td><td>name2</td><td>4612</td>   
+        </tr>   
+    </tbody> -->   
+</table> 

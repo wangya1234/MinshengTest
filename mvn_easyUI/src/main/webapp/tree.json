@@ -1,0 +1,122 @@
+[
+    {
+        "id": "1",
+        "text": "部门管理",
+        "state": "closed",
+        "attributes": {},
+        "children": [
+            {
+                "id": "11",
+                "text": "添加部门",
+                "state": "open",
+				"attributes":{
+					"href":"/dept_add.html"
+				}
+            },
+            {
+                "id": "12",
+                "text": "查询部门",
+                "state": "open",
+				"attributes":{
+					"href":"/dept_query.html"
+				}
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "text": "员工管理",
+        "state": "closed",
+        "attributes": {},
+        "children": [
+            {
+                "id": "21",
+                "text": "添加员工",
+                "state": "open",
+				"attributes":{
+					"href":"/emp_add.html"
+				}
+            },
+            {
+                "id": "22",
+                "text": "查询员工",
+                "state": "open",
+				"attributes":{
+					"href":"/emp_query.html"
+				}
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "text": "合同管理",
+        "state": "closed",
+        "attributes": {},
+        "children": [
+            {
+                "id": "31",
+                "text": "添加合同",
+                "state": "open",
+				"attributes":{
+					"href":"/hetong_add.html"
+				}
+            },
+            {
+                "id": "32",
+                "text": "查询合同",
+                "state": "open",
+				"attributes":{
+					"href":"/hetong_query.html"
+				}
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "text": "绩效管理",
+        "state": "closed",
+        "attributes": {},
+        "children": [
+            {
+                "id": "41",
+                "text": "添加绩效",
+                "state": "open",
+				"attributes":{
+					"href":"/kpi_add.html"
+				}
+            },
+            {
+                "id": "42",
+                "text": "绩效统计",
+                "state": "open",
+				"attributes":{
+					"href":"/kpi_statistics.html"
+				}
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "text": "客户管理",
+        "state": "closed",
+        "attributes": {},
+        "children": [
+            {
+                "id": "51",
+                "text": "添加客户",
+                "state": "open",
+				"attributes":{
+					"href":"/cust_add.html"
+				}
+            },
+            {
+                "id": "52",
+                "text": "查询客户",
+                "state": "open",
+				"attributes":{
+					"href":"/cust_query.html"
+				}
+            }
+        ]
+    }
+]
