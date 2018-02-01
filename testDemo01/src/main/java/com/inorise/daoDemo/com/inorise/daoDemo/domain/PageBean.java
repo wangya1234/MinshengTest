@@ -7,8 +7,26 @@ public class PageBean {
     private String description;
     private String releaseYear;
     private Short length;
+    private String ids;
+    private Long  filmIdRep;
 
-    public Integer getPage() {
+    public Long getFilmIdRep() {
+		return filmIdRep;
+	}
+
+	public void setFilmIdRep(Long filmIdRep) {
+		this.filmIdRep = filmIdRep;
+	}
+
+	public String getIds() {
+		return ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+
+	public Integer getPage() {
         return page;
     }
 

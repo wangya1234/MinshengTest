@@ -31,10 +31,52 @@ public class FilmController {
     @Autowired
     private FilmDao filmDao;
 
+//
+//    @RequestMapping("/pageQuery")
+//    public Result pageQuery(final PageBean pageBean){
+    
 
+   // @RequestMapping
+    @RequestMapping("/delete")
+    public Result delete(final PageBean pageBean){
+        
+    	logger.info(pageBean.getIds());
+    	String ids=  pageBean.getIds();
+    	
+    	if(pageBean.getIds().contains(",")) 
+    	{
+    		String[] idss = ids.split(",");
+    		for (String stringg : idss) {
+    			filmDao.delete(Long.valueOf(stringg));
+			}
+    		
+    	}else
+    	{
+    		filmDao.delete(Long.valueOf(pageBean.getIds()));
+    	}
+    	
+    	
+    	
+    	Page<Film> page1 = (Page<Film>) filmDao.findAll();
 
+        List<Film> list = page1.getContent();
+        long total = page1.getTotalElements();
+        Result result = new Result();
+        result.setRows(list);
+        result.setTotal(total);
+        return result;
+    	
+    }
+    
     @RequestMapping("/findOne/{id}")
     public Film findOne(@PathVariable(name="id") Long id){
+        Film film = filmDao.findOne(id);
+        System.out.println(film);
+        return film;
+    }
+    
+    @RequestMapping("/findOner/{id}")
+    public Film findOner(@PathVariable(name="id") Long id){
         Film film = filmDao.findOne(id);
         System.out.println(film);
         return film;

@@ -41,13 +41,13 @@
                     if (r){
                         var idsArr = new Array();
                         for(var i=0;i<rows.length;i++){
-                            idsArr.push(rows[i].id);
+                            idsArr.push(rows[i].filmId);
                         }
                         var ids = idsArr.toString();
                         //	idsArr.join(',');
                         var para = {'ids':ids};
                         //因为ajax无法刷新页面，所以使用href提交请求
-                        location.href = "/film/delete.action?ids="+ids;
+                        location.href = "/film/delete?ids="+ids;
                     }
                 });
             }else{
@@ -88,13 +88,26 @@
             field : 'filmId',
             title : 'id',
             width : 200,
-            checkbox : true
+            checkbox : true 
+        },{
+            field : 'languageId',
+            title : '电影id',
+            width : 100,
+            align : 'center'
+        }
+        ,{
+            field : 'title',
+            title : '名称',
+            width : 100,
+            align : 'center'
         },{
             field : 'description',
             title : '说明',
-            width : 120,
+            width : 500,
             align : 'center'
-        },{
+        }
+        
+        ,{
             field : 'releaseYear',
             title : '生产年',
             width : 100,
@@ -141,7 +154,7 @@
 </head>
 
 <body class="easyui-layout" style="visibility:hidden;">
-<div region="center" border="false">
+<div region="center" border="true">
     <table id="grid"></table>
 </div>
 <div class="easyui-window" title="FilmList" id="addWindow" collapsible="false" minimizable="false" maximizable="false" style="top:20px;left:200px">
