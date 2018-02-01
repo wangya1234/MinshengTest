@@ -1,10 +1,17 @@
 package com.inorise.daoDemo.com.inorise.daoDemo.controller;
 
-import com.inorise.daoDemo.com.inorise.daoDemo.dao.FilmDao;
-import com.inorise.daoDemo.com.inorise.daoDemo.domain.Film;
-import com.inorise.daoDemo.com.inorise.daoDemo.domain.PageBean;
-import com.inorise.daoDemo.com.inorise.daoDemo.domain.Result;
-import com.inorise.daoDemo.com.inorise.daoDemo.service.FilmServcie;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +19,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.context.request.ServletWebRequest;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import java.util.ArrayList;
-import java.util.List;
+import com.inorise.daoDemo.com.inorise.daoDemo.dao.FilmDao;
+import com.inorise.daoDemo.com.inorise.daoDemo.domain.Film;
+import com.inorise.daoDemo.com.inorise.daoDemo.domain.PageBean;
+import com.inorise.daoDemo.com.inorise.daoDemo.domain.Result;
 
 @RestController
 @RequestMapping(value="/film")
@@ -38,7 +48,7 @@ public class FilmController {
 
    // @RequestMapping
     @RequestMapping("/delete")
-    public Result delete(final PageBean pageBean){
+    public void delete(final PageBean pageBean) throws IOException{
         
     	logger.info(pageBean.getIds());
     	String ids=  pageBean.getIds();
@@ -55,16 +65,16 @@ public class FilmController {
     		filmDao.delete(Long.valueOf(pageBean.getIds()));
     	}
     	
+    	HttpServletRequest requestRequest = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
     	
     	
-    	Page<Film> page1 = (Page<Film>) filmDao.findAll();
+    	HttpServletResponse responseResponse = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getResponse();
 
-        List<Film> list = page1.getContent();
-        long total = page1.getTotalElements();
-        Result result = new Result();
-        result.setRows(list);
-        result.setTotal(total);
-        return result;
+    
+    	//ServletContext context = ContextLoader.getCurrentWebApplicationContext().getServletContext();
+    	
+    	responseResponse.sendRedirect(requestRequest.getContextPath()+"/page.html");
+    
     	
     }
     
