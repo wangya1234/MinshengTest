@@ -1,20 +1,10 @@
 package com.inorise.daoDemo.com.inorise.daoDemo.service;
 
-import com.inorise.daoDemo.com.inorise.daoDemo.dao.FilmDao;
-import com.inorise.daoDemo.com.inorise.daoDemo.domain.Film;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import java.util.List;
-
-import static com.inorise.daoDemo.com.inorise.daoDemo.domain.Film.*;
+import com.inorise.daoDemo.com.inorise.daoDemo.dao.FilmDao;
+import com.inorise.daoDemo.com.inorise.daoDemo.domain.Film;
 
 @Service
 public class FilmServcie {
