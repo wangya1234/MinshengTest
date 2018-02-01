@@ -58,8 +58,8 @@ public class FilmController {
                       list.add(cb.equal(root.get("filmId").as(Long.class),pageBean.getFilmId()));
                 }
                 if (null != pageBean.getDescription() && !"".equals(pageBean.getDescription())) {
-                 list.add(cb.like(root.get("description").as(String.class),"%" + pageBean.getDescription() + "%"));
-                 }
+                    list.add(cb.like(root.get("description").as(String.class),pageBean.getDescription()));
+                }
 
                 if (null != pageBean.getReleaseYear() && !"".equals(pageBean.getReleaseYear())) {
                     list.add(cb.equal(root.get("releaseYear").as(String.class),pageBean.getReleaseYear()));
