@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="OpenFaces-3.0" type="jsf-openfaces">
+    <properties version="3.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/eureka/lib/sac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jcommon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/cssparser.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jfreechart.jar!/" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/openfaces-license.txt" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/commons-collections_2.jar!/" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/redistribution.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/commons-codec-1.3-license.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/cssparser-0.9.4-license.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/dojo-license.txt" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/openfaces.jar!/" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/jdom-1.0-license.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/jfreechart-license.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/myfaces-license.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/json-license.txt" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

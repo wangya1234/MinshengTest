@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="IceFaces-3.1.0" type="jsf-icefaces">
+    <properties version="3.1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/eureka/lib/icepush.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/icefaces.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/icefaces-compat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/icefaces-ace.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/el-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/krysalis-jCharts-1.0.0-alpha-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/poi-3.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/portletfaces-bridge-2.0.2-ice-7875.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jxl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/el-api-2.2.1-b03.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/FastInfoset.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/portlet2-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/javax.servlet.jar!/" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/NOTICE.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/MIT-LICENSE.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/CDDL-1.0.txt" />
+      <root url="file://$PROJECT_DIR$/eureka/lib/ApacheLICENSE-2.0.txt" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

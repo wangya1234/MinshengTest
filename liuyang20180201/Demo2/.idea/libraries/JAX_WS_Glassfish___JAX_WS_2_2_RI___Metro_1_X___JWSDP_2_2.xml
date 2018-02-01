@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" type="JAX-WS">
+    <properties version="Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/eureka/lib/javax.annotation_2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/ha-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/gmbal-api-only.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/FastInoset.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jaxb-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jaxws-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jaxb-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jsr181-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jaxws-tools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/management-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jaxb-xjc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/mimepull.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/policy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/saaj-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/stax-ex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/stax2-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/saaj-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/streambuffer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/jaxws-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eureka/lib/woodstox-core-asl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
