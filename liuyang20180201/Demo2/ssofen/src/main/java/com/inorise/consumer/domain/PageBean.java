@@ -1,6 +1,8 @@
 package com.inorise.consumer.domain;
 
-public class PageBean {
+import java.io.Serializable;
+
+public class PageBean implements Serializable {
     private Integer page=1;
     private Integer rows=10;
     private Long  filmId;

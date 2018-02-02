@@ -1,0 +1,18 @@
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8080/eureka/
+feign:
+    httpclient:
+        connection-timeout: 5000000
+        time-to-live: 3000000
+        time-to-live-unit: SECONDS
+    hystrix:
+        enabled: false
+
+server:
+    port: 9002
+spring:
+    application:
+        name: fegin-consumer
+

@@ -1,8 +1,8 @@
 package com.inorise.consumer.domain;
 
 public class PageBean {
-    private Integer page=1;
-    private Integer rows=10;
+    private Integer page;
+    private Integer rows;
     private Long  filmId;
     private String description;
     private String releaseYear;

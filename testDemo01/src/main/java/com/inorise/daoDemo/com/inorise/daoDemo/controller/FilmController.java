@@ -100,6 +100,19 @@ public class FilmController {
      */
     @RequestMapping("/pageQuery")
     public Result pageQuery(final PageBean pageBean){
+    	
+    	
+    	
+    	
+    	
+    	Long a= System.currentTimeMillis();
+    	
+    	
+    	
+    	
+    	
+    	
+    	
         Pageable pageable = new PageRequest(pageBean.getPage()-1,pageBean.getRows());
         Specification<Film> spec = new Specification<Film>() {
             @Override
@@ -135,6 +148,22 @@ public class FilmController {
         Result result = new Result();
         result.setRows(list);
         result.setTotal(total);
+        
+        
+        
+        
+        
+
+    
+    	
+    	Long b= System.currentTimeMillis();
+    	
+    	double c= (b-a)/(double)1000;
+    	
+    	logger.info("分页page调用所花的时间：" + String.valueOf(c) );
+        
+        
+        
         return result;
 
     }

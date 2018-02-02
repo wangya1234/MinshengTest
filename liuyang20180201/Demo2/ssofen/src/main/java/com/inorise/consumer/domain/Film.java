@@ -1,10 +1,11 @@
 package com.inorise.consumer.domain;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 
-public class Film {
+public class Film implements Serializable {
 
 
     public Film() {
