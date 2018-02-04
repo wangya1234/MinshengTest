@@ -1,0 +1,64 @@
+
+<html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="/components/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="/components/zTree/js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="/components/zTree/js/jquery.ztree.core-3.5.min.js"></script>
+	<script type="text/javascript" src="/components/zTree/js/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			/*console.log("21212")*/
+			$.ajax("localhost:8088/findemp",function (list) {
+				/*console.log(data);*/
+				alert(list);
+				var zNodes1 =data;
+				$.fn.zTree.init($("#htZtree"), setting, zNodes1);
+				var zTreeObj = $.fn.zTree.getZTreeObj("htZtree");
+				zTreeObj.expandAll(true);		//展开所有树节点
+			})
+
+
+					/*var str='<ul>';
+					 $.each(data,function(index,value){
+					 str+="<li>"+value.name+"</li>"
+					 })
+					 str+='</ul>'
+					 $("#content").html(str);*/
+
+
+			var setting = {
+				check: {
+					enable: true
+				},
+				data: {
+					simpleData: {
+						enable: true
+					}
+				}
+			};
+			//var zNodes =zNodes1;
+			//$(document).ready(function () {
+			/*$.fn.zTree.init($("#htZtree"), setting, zNodes);
+			 var zTreeObj = $.fn.zTree.getZTreeObj("htZtree");
+			 zTreeObj.expandAll(true);		//展开所有树节点*/
+			//});
+		});
+
+	</script>
+
+</head>
+
+<body>
+<h1>分级</h1>
+<div style="padding:30px;">
+	<ul id="htZtree" class="ztree"></ul>
+</div>
+<div id="content">
+
+</div>
+
+
+</body>
+</html>
+
