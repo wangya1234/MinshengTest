@@ -27,6 +27,7 @@ public class AopUtil {
 
 		Long a = System.currentTimeMillis();
 
+		
 		 Object result=pjp.proceed();
 		 
 		 Object[] args = pjp.getArgs();
