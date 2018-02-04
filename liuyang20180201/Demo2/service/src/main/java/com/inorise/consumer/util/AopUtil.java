@@ -36,6 +36,7 @@ public class AopUtil {
 			 argsString.add(string.toString());
 		}
 
+		 
 		Long b = System.currentTimeMillis();
 
 		double c = (b - a) / (double) 1000;
