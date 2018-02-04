@@ -87,4 +87,15 @@ public class PageBean implements Serializable {
         this.releaseYear = releaseYear;
         this.length = length;
     }
+
+	@Override
+	public String toString() {
+		return "PageBean [page=" + page + ", rows=" + rows + ", filmId=" + filmId + ", description=" + description
+				+ ", releaseYear=" + releaseYear + ", length=" + length + ", ids=" + ids + ", filmIdRep=" + filmIdRep
+				+ ", getFilmIdRep()=" + getFilmIdRep() + ", getIds()=" + getIds() + ", getPage()=" + getPage()
+				+ ", getRows()=" + getRows() + ", getFilmId()=" + getFilmId() + ", getDescription()=" + getDescription()
+				+ ", getReleaseYear()=" + getReleaseYear() + ", getLength()=" + getLength() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+    
 }

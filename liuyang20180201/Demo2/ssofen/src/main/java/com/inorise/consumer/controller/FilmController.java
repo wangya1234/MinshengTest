@@ -14,42 +14,26 @@ import com.inorise.consumer.domain.PageBean;
 import com.inorise.consumer.domain.Result;
 
 @RestController
-@RequestMapping(value="/film")
+@RequestMapping(value = "/film")
 public class FilmController {
 
-    private Logger logger = LoggerFactory.getLogger(FilmController.class);
+	private Logger logger = LoggerFactory.getLogger(FilmController.class);
 
-    @Autowired
+	@Autowired
 	private ComputeClient computeClient;
-    
-    @RequestMapping(value="/pageQuery", method = RequestMethod.POST)
-    public Result pageQuery(PageBean pageBean){
-    	
-    	logger.info("调用端rows："+pageBean.getRows());
-    	HashMap<String,String> resultType=new HashMap<String,String>();
-    	resultType.put("page", Integer.toString(pageBean.getPage()) );
-    	
-    	Long a= System.currentTimeMillis();
-    	
-    	Result r = computeClient.pageQuery(pageBean);
-    	Long b= System.currentTimeMillis();
-    	
-    	double c= (b-a)/(double)1000;
-    	
-    	logger.info("分页page调用所花的时间：" + String.valueOf(c) );
-    	
-    	return r;
-    
-    }
-    
-    
-    @RequestMapping("/hello")
-    public String helloWorld() {
-    	return "Hello World";
-    }
 
+	@RequestMapping(value = "/pageQuery", method = RequestMethod.POST)
+	public Result pageQuery(PageBean pageBean) {
+	
+		Result r = computeClient.pageQuery(pageBean);
 
+		return r;
 
+	}
 
+	@RequestMapping("/hello")
+	public String helloWorld() {
+		return "Hello World";
+	}
 
 }

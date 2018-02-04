@@ -15,4 +15,10 @@ server:
 spring:
     application:
         name: fegin-consumer
+management:
+    security:
+      enabled: false
+endpoints:
+  mappings:
+    sensitive: false
 

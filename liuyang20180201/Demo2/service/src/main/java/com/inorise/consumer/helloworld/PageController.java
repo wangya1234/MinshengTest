@@ -40,9 +40,7 @@ public class PageController {
 	@PostMapping(value = "/page/pageQuery")
 	public Result pageQuery(@RequestBody PageBean pageBean) {
 		
-		logger.info("服务端rows："+pageBean.getRows());
 		
-		System.out.println("请求进来了，参数是：" + pageBean);
 		Pageable pageable = new PageRequest(pageBean.getPage() - 1, pageBean.getRows());
 		Specification<Film> spec = new Specification<Film>() {
 			@Override
@@ -77,5 +75,14 @@ public class PageController {
 		result.setTotal(total);
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return "PageController [logger=" + logger + ", discoveryClient=" + discoveryClient + ", filmDao=" + filmDao
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
+	
 
 }
